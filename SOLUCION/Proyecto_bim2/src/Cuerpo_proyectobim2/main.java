@@ -5,5 +5,6 @@ import Cuerpo_proyectobim2.compra_entradas.*;
 public class main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
+        compra_entradas.entradas(teclado);
     }
 }
