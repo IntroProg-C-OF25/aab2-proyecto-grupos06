@@ -1,4 +1,5 @@
 import obtener_estadistica
+#Definicion del metodo utilizado 
 def compra(var1, var2):
     lunes = martes = miercoles = jueves = viernes = sabado = domingo = 0 #Vamos a usar las mismas variables que en java para una mejor comprension
     #Variables usadas en este metodo

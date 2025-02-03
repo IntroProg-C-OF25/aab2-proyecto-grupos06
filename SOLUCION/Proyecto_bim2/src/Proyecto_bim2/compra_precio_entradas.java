@@ -6,7 +6,7 @@ import java.util.Scanner;
 import static Proyecto_bim2.obtener_estadistica.*;
 
 public class compra_precio_entradas {
-
+    //Metodo para vender y calcular la cantidad de entradas vendidas segun el dia y la hora 
     public static void compra(Scanner teclado, int var1, int var2) {
         int lunes=0,martes=0,miercoles=0,jueves=0,viernes=0,sabado=0,domingo=0; //Variblables que se van a importar a otro metodo para realizar calculos
         //Variables utilizadas en este metodo 

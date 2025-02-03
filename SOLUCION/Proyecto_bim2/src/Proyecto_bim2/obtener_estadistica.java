@@ -1,5 +1,6 @@
 package Proyecto_bim2;
 public class obtener_estadistica {
+    //Declaracion del metodo que se va a encargar del calculo y impresion de las estadisticas recaudadas
     public static void estadistica(int var1,int var2,int var3,int var4,int var5,int var6,int var7){
         int mayor=0, menor=0, total_entradas=0,total_general=0,total_eventos=0;
         //Funciones de tipo Math que van a iterarse repetitivamente de derecha a izquiera comprobando todos los valores para encontrar max y min
