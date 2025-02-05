@@ -5,7 +5,7 @@ Autores : Jorge Quito/David González
 """
 import compra_precio_entradas # Se importa el otro modulo similar a java
 
-#import compra_precio_entradas_automatico
+import compra_precio_entradas_automatico
 
 #Se declaran las varibles que se van a insertar como parametros
 entradas_normales = 0

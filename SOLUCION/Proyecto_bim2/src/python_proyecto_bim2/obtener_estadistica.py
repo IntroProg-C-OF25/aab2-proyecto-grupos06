@@ -5,20 +5,20 @@
 # y una tabla con las entradas vendidas por dia
 # y el total de entradas vendidas en dias con eventos y en dias sin eventos
 # y el total de entradas vendidas
-def estadistica(var1,var2,var3,var4,var5,var6,var7):
-    total_general = var1+var2+var3+var7
-    total_eventos = var4+var5+var6
-    total_entradas = var1 + var2 + var3 + var4 + var5 + var6 + var7
-    mayor = max(var1, var2, var3, var4, var5, var6, var7)
-    menor = min(var1, var2, var3, var4, var5, var6, var7)
+def estadistica(matriz):
+    total_general = matriz[0]+matriz[1]+matriz[2]+matriz[6]
+    total_eventos = matriz[3]+matriz[4]+matriz[5]
+    total_entradas = sum(matriz) #Metodo que permite sumar todos los valores de una lista
+    mayor = max(matriz[0], matriz[1], matriz[2], matriz[3], matriz[4], matriz[5], matriz[6])
+    menor = min(matriz[0], matriz[1], matriz[2], matriz[3], matriz[4], matriz[5], matriz[6])
     print('Valor maximo de entradas vendidas por dia: ',mayor)
     print('Valor minimo de entradas vendidas por dia: ', menor)
     print("""
-    +------------+-------------+----------------+-------------+--------------+--------------+--------------+
-    |   LUNES    |    MARTES   |    MIERCOLES   |    JUEVES   |    VIERNES   |    SABADO    |    DOMINGO   |
-    +------------+-------------+----------------+-------------+--------------+--------------+--------------+""")
-    print("    |   ",var1,"   |    ",var2,"   |     ",var3,"     |    ",var4,"   |    ",var5,"    |    ",var6,"    |    ",var7,"    |")
-    print('    +------------+-------------+----------------+-------------+--------------+--------------+--------------+')
+    +--------------+---------------+------------------+---------------+----------------+----------------+----------------+
+    |    LUNES     |     MARTES    |     MIERCOLES    |     JUEVES    |     VIERNES    |     SABADO     |     DOMINGO    |
+    +--------------+---------------+------------------+---------------+----------------+----------------+----------------+""")
+    print("    |    ",matriz[0],"    |     ",matriz[1],"   |      ",matriz[2],"      |     ",matriz[3],"    |     ",matriz[4],"    |     ",matriz[5],"    |     ",matriz[6],"    |")
+    print('    +--------------+---------------+------------------+---------------+----------------+----------------+----------------+')
     print('Total de entradas vendidas:' , total_entradas)
     print('Total de entradas vendidas por eventos:' , total_eventos)
     print('Total de entradas vendidas en dias sin eventos: ' , total_general)

@@ -8,7 +8,7 @@ import static Proyecto_bim2.obtener_estadistica.*;
 public class compra_precio_entradas {
     //Metodo para vender y calcular la cantidad de entradas vendidas segun el dia y la hora 
     public static void compra(Scanner teclado, int var1, int var2) {
-        int lunes=0,martes=0,miercoles=0,jueves=0,viernes=0,sabado=0,domingo=0; //Variblables que se van a importar a otro metodo para realizar calculos
+        int dias[]=new int[7]; //Matriz que se va a importar a otro metodo para realizar calculos
         //Variables utilizadas en este metodo 
         int dia = 0;
         double hora = 0;
@@ -37,23 +37,23 @@ public class compra_precio_entradas {
                         }
                         //Comprobar que dia exactamente se realizo la compra de las entradas, para generar estadistica
                         if(dia == 5)
-                            jueves++;
+                            dias[3]++;
                         else if(dia == 30 || dia ==  6)
-                            viernes++;
+                            dias[4]++;
                         else if(dia == 31 || dia ==  7)
-                            sabado++;
+                            dias[5]++;
                         break;
                     case 1: case 2: case 3: case 4: case 8: //Dias normales
                         var1++;
                         //Comprobar el dia exacto durante los dias sin eventos
                         if(dia == 1 || dia ==8)
-                            domingo++;
+                            dias[6]++;
                         else if(dia == 2)
-                            lunes++;
+                            dias[0]++;
                         else if(dia == 3)
-                            martes++;
+                            dias[1]++;
                         else if(dia == 4)
-                            miercoles++;
+                            dias[2]++;
                         break;
                         //Si no es ningun dia de los anteriores se imprime un mensaje de error
                     default:
@@ -70,7 +70,7 @@ public class compra_precio_entradas {
             //porque no estamos usando variables en el metodo main, si no variables temporales dentro de los submetodos
             precio(var1, var2);
             //Se lo llama dentro de este metodo para utilizar las varibles temporales creadas
-            estadistica(lunes, martes, miercoles, jueves, viernes, sabado, domingo);
+            estadistica(dias);
         }
     }
     //Metodo para calcular el precio de las entradas segun el numero de ventas

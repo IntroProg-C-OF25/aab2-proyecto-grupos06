@@ -9,10 +9,10 @@ public class compra_precio_entradas_automatico {
 
     //Metodo que vende las entradas de forma automatica, se generan numeros aleatorios
     public static void compra_automatica(int var1, int var2) {
-        int lunes = 0, martes = 0, miercoles = 0, jueves = 0, viernes = 0, sabado = 0, domingo = 0; //Variblables que se van a importar a otro metodo para realizar calculos
+        int dias[]=new int[7]; //Matriz que se va a importar a otro metodo para realizar calculos
         //Variables utilizadas en este metodo 
         Random random = new Random();
-        int dia = 0, limite = 40000, hora = 0;
+        int dia = 0, limite = 100000, hora = 0;
         String mes = " ";
         //Se solicita al usuario fecha y hora para comprobar que tipo de entrada se puede vender 
         for (int i = 0; i < limite; i++) {
@@ -31,26 +31,24 @@ public class compra_precio_entradas_automatico {
                             var1++;
                         }
                         //Comprobar que dia exactamente se realizo la compra de las entradas, para generar estadistica
-                        if (dia == 5) {
-                            jueves++;
-                        } else if (dia == 30 || dia == 6) {
-                            viernes++;
-                        } else if (dia == 31 || dia == 7) {
-                            sabado++;
-                        }
+                        if(dia == 5)
+                            dias[3]++;
+                        else if(dia == 30 || dia ==  6)
+                            dias[4]++;
+                        else if(dia == 31 || dia ==  7)
+                            dias[5]++;
                         break;
                     case 1:case 2:case 3:case 4:case 8: //Dias normales
                         var1++;
                         //Comprobar el dia exacto durante los dias sin eventos
-                        if (dia == 1 || dia == 8) {
-                            domingo++;
-                        } else if (dia == 2) {
-                            lunes++;
-                        } else if (dia == 3) {
-                            martes++;
-                        } else if (dia == 4) {
-                            miercoles++;
-                        }
+                        if(dia == 1 || dia ==8)
+                            dias[6]++;
+                        else if(dia == 2)
+                            dias[0]++;
+                        else if(dia == 3)
+                            dias[1]++;
+                        else if(dia == 4)
+                            dias[2]++;
                         break;
                     default:
                         System.out.print("Dia no valido");
@@ -63,7 +61,7 @@ public class compra_precio_entradas_automatico {
         //porque no estamos usando variables en el metodo main, si no variables temporales dentro de los submetodos
         precio(var1, var2);
         //Se lo llama dentro de este metodo para utilizar las varibles temporales creadas
-        estadistica(lunes, martes, miercoles, jueves, viernes, sabado, domingo);
+        estadistica(dias);
     }
 
     //Metodo para calcular el precio de las entradas segun el numero de ventas

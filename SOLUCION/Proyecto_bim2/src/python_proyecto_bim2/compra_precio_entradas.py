@@ -1,7 +1,7 @@
 import obtener_estadistica
 #Definicion del metodo utilizado 
 def compra(var1, var2):
-    lunes = martes = miercoles = jueves = viernes = sabado = domingo = 0 #Vamos a usar las mismas variables que en java para una mejor comprension
+    dias = [0,0,0,0,0,0,0] #Vamos a usar la misma lista que en java para una mejor comprension
     #Variables usadas en este metodo
     dia = 0
     hora = 0
@@ -20,25 +20,25 @@ def compra(var1, var2):
                         var2+=1 #En caso de venta obligatoria de entrada de eventos
                     else:
                         var1+=1 #En caso de que no sea obligatoria la venta de entrada de eventos
-                    #Comprobar exatamente el dia de la semana para generar la estadistica
+                    #Se comprueba el dia exacto para generar la estadistica
                     if dia == 5:
-                        jueves+=1
+                        dias[3]+=1
                     elif dia in {30,6}:
-                        viernes += 1
+                        dias[4]+= 1
                     elif dia in {31,7}:
-                        sabado+=1
+                        dias[5]+=1
             #Dias en los que no se desarrolla ningun evento
             elif dia in {1,2,3,4,8}:
                 var1+=1
                 #Comprobar el dia exacto
                 if dia in {1,8}:
-                    domingo+=1
+                    dias[6]+=1
                 elif dia == 2:
-                    lunes += 1
+                    dias[0]+= 1
                 elif dia == 3:
-                    martes+=1
+                    dias[1]+=1
                 elif dia == 4:
-                    miercoles += 1
+                    dias[2] += 1
                 else: #En caso de que el dia ingresado no este dentro del rango
                     print('Dia no valido')
         #Comprobar si el usuario quiera ingresar o no mas datos
@@ -47,7 +47,7 @@ def compra(var1, var2):
             break #En caso que el usuario no quiera ingresar mas datos 
     #Invocacion de los metodos 
     precio(var1,var2)
-    print(obtener_estadistica.estadistica(lunes, martes,miercoles, jueves, viernes, sabado, domingo))
+    print(obtener_estadistica.estadistica(dias))
 #Funcion que calcula el precio de las entradas
 def precio(var1, var2):
     precio_general = 2.50
