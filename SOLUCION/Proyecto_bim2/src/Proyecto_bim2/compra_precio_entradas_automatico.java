@@ -1,5 +1,7 @@
 //El paquete es necesario para importar los java class entre si y poder utilizar sus metodos
 package Proyecto_bim2;
+//Se importa el procedimiento para calcular el precio el cual se definio en el compra_precop_entradas manual, reutilizando codigo
+import static Proyecto_bim2.compra_precio_entradas.precio;
 //Se importa el metodo que va a calcular la estadistica de las entradas vendidas
 import static Proyecto_bim2.obtener_estadistica.*;
 //Se importa la libreria que va a generar numeros aleatorios
@@ -62,21 +64,5 @@ public class compra_precio_entradas_automatico {
         precio(var1, var2);
         //Se lo llama dentro de este metodo para utilizar las varibles temporales creadas
         estadistica(dias);
-    }
-
-    //Metodo para calcular el precio de las entradas segun el numero de ventas
-    //Esto nos ahorra el calculo en el metodo principal y nos permite utilizar el total de entradas vendidas para otros objetivos como la estadistica de las entradas
-    public static void precio(int var1, int var2) {
-        //Declaracion de las variables temporales que se van a utilizar en este metodo
-        double precio_general = 2.50, precio_eventos = 5.00, total_general = 0, total_eventos = 0, precio_total = 0;
-        //Calculo del precio total de las entradas
-        total_general = precio_general * var1;
-        //Calculo del precio total de las entradas de eventos
-        total_eventos = precio_eventos * var2;
-        //Calculo del precio total de las entradas
-        precio_total = total_general + total_eventos;
-        System.out.println("Precio por entradas generales: " + total_general+"$");
-        System.out.println("Precio por entradas de eventos: " + total_eventos+"$");
-        System.out.println("Precio total: " + (precio_total)+"$");
     }
 }

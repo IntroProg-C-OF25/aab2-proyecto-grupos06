@@ -12,9 +12,9 @@ entradas_normales = 0
 entradas_eventos = 0
 #Se imprime el metodo 
 
-print(compra_precio_entradas.compra(entradas_normales,entradas_eventos))
+#print(compra_precio_entradas.compra(entradas_normales,entradas_eventos))
 
-#print(compra_precio_entradas_automatico.compra_automatica(entradas_normales,entradas_eventos))
+print(compra_precio_entradas_automatico.compra_automatica(entradas_normales,entradas_eventos))
 """
 Total por entradas generales:  37275.0 $
 Total por entradas de eventos:  75450.0 $
